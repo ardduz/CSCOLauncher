@@ -1,0 +1,61 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSCOlauncher"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        x:Class="CSCOlauncher.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="561" Width="525" ResizeMode="NoResize" Background="#FF303829" WindowStyle="None" Foreground="White" MouseLeftButtonDown="Window_MouseDown" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="515*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="titleText" HorizontalAlignment="Left" Margin="29,8,0,15" TextWrapping="Wrap" Text="Counter-Strike: Classic Offensive" FontFamily="Tahoma" FontWeight="Thin" FontSize="14" Width="260" />
+        <Button x:Name="exitButton" Content="" HorizontalAlignment="Right" Margin="0,8,10,18" Width="20" BorderBrush="{x:Null}" Click="exitButton_Click" Height="20">
+            <Button.Background>
+                <ImageBrush ImageSource="xbutton.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="startButton" Content="Start CS:CO" HorizontalAlignment="Right" Margin="0,461,361,10" Grid.Row="1" Width="154" FontFamily="Tahoma" BorderBrush="Black" Foreground="White" FontSize="16" FontWeight="Bold" Click="startButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="button_background.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="versionText" HorizontalAlignment="Left" Margin="11,398,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="14" Height="20" Width="505"><Run Text="You are running the latest version (1.1b)"/><LineBreak/><Run/></TextBlock>
+        <Button x:Name="optionsButton" Content="Options" HorizontalAlignment="Right" Height="22" Margin="0,0,102,10" Grid.Row="1" VerticalAlignment="Bottom" Width="62" FontFamily="Tahoma" BorderBrush="Black" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="button_background.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="aboutButton" Content="About CS:CO" HorizontalAlignment="Right" Height="22" Margin="0,0,10,10" Grid.Row="1" VerticalAlignment="Bottom" Width="87" FontFamily="Tahoma" BorderBrush="Black" Foreground="White" Click="aboutButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="button_background.png"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="image" Margin="4,5,0,15" Source="logo.png" HorizontalAlignment="Left" Width="20"/>
+        <ProgressBar x:Name="downloadProgressBar" Margin="10,369,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="242" Background="#FF303829" BorderBrush="#FF6E6E6E" Foreground="#FF959C00" Height="24" VerticalAlignment="Top"/>
+        <TextBlock x:Name="statusText" HorizontalAlignment="Right" Margin="0,376,9,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" FontFamily="Tahoma" Height="17" Width="155"/>
+        <ListBox x:Name="lstFeedItems"
+                     Grid.Column="0"
+                     DisplayMemberPath="Title.Text" Margin="10,53,10,342" Grid.Row="1" SelectionChanged="lstFeedItems_SelectionChanged" Background="#FF1F251B" Foreground="White" FontFamily="Tahoma" FontSize="14" Height="120" />
+        <Button x:Name="homepageButton" Content="Homepage" Height="22" Margin="0,26,10,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Tahoma" BorderBrush="Black" Foreground="White" HorizontalAlignment="Right" Width="78" Click="homepageButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="button_background.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="newsText" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="1" TextWrapping="Wrap" Text="News" VerticalAlignment="Top" FontFamily="Tahoma" FontSize="20"/>
+        <ListBox x:Name="releaseFeedItems"
+            Grid.Column="0"
+            DisplayMemberPath="Title.Text" Margin="10,233,10,162" Grid.Row="1" SelectionChanged="releaseFeedItems_SelectionChanged" Background="#FF1F251B" Foreground="White" FontFamily="Tahoma" FontSize="14" Height="120" />
+        <TextBlock x:Name="releasesText" HorizontalAlignment="Left" Margin="10,0,0,286" Grid.Row="1" TextWrapping="Wrap" Text="Releases" VerticalAlignment="Bottom" FontFamily="Tahoma" FontSize="20"/>
+        <Button x:Name="downloadsButton" Content="Downloads" Height="22" Margin="0,0,10,287" Grid.Row="1" VerticalAlignment="Bottom" FontFamily="Tahoma" BorderBrush="Black" Foreground="White" HorizontalAlignment="Right" Width="78" Click="downloadsButton_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="button_background.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
